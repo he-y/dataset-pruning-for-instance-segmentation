@@ -1,0 +1,16 @@
+**/__pycache__/
+voc_2012/results
+voc_2012/image
+voc_2012/images_test
+voc_2012/VOCdevkit/VOC2012/annotations
+voc_2012/VOCdevkit/VOC2012/ImageSets
+voc_2012/VOCdevkit/VOC2012/JPEGImages
+voc_2012/VOCdevkit/VOC2012/SegmentationClass
+voc_2012/VOCdevkit/VOC2012/SegmentationObject
+voc_2012/VOCdevkit/VOC2012/*.txt
+voc_2012/images_test
+voc_2012/pytorch_mask_rcnn/gpu_info.json
+voc_2012/pytorch_mask_rcnn/__pycache__
+mmdet_cityscapes_coco/data
+mmdet_cityscapes_coco/work_dirs
+*.pyc

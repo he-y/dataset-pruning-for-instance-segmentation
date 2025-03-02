@@ -1,0 +1,95 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "1"
+            },
+            "name": "Python 调试程序: 当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "name": "train: voc",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["--use-cuda", "--iters", "2000", "--dataset","voc", "--data-dir", "VOCdevkit/VOC2012", "--epochs", "3", "--voc_select_num", "294", "--rank_method", "ratio_ccs"]
+        },
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "name": "train: coco",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["--use-cuda", "--iters", "2000", "--dataset","coco", "--data-dir", "../mmdet_cityscapes_coco/data/coco2017", "--epochs", "3", "--voc_select_num", "0"]
+        },
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "name": "train: city",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["--use-cuda", "--iters", "2000", "--dataset","coco", "--data-dir", "../mmdet_cityscapes_coco/data/cityscapes", "--epochs", "3", "--voc_select_num", "0"]
+        },
+
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "1"
+            },
+            "name": "train: voc score",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["--use-cuda", "--iters", "2000", "--dataset","coco", "--data-dir", "VOCdevkit/VOC2012", "--epochs", "3", "--voc_select_num", "1170", "--rank_method", "total_ratio"]
+        },
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "name": "test: roi score",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/get_run_score.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+
+        {
+            "env":{
+                "CUDA_VISIBLE_DEVICES": "1"
+            },
+            "name": "eval",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/eval.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+    ]
+}
